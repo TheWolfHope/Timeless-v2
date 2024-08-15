@@ -10,12 +10,14 @@ public class SpawnAsesinoScript : MonoBehaviour
     public TemporizadorScript temporizadorScript;
     public GameObject helper;
     public bool seSpaweno = false;
+    public GameObject pauseButton;
 
     private void Update()
     {
         if (temporizadorScript.remainigngTime == 0)
         {
             helper.SetActive(false);
+            pauseButton.SetActive(false);
             foreach(GameObject lit2D in light2D)
             {
                 lit2D.SetActive(false);

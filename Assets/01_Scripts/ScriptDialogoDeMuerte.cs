@@ -11,6 +11,8 @@ public class ScriptDialogoDeMuerte : MonoBehaviour
     public string[] dialogueLines;
     public Sprite portrait;
     public UnityEngine.UI.Image uiImage;
+     public Animator uiSecondImageAnim;
+    public string animName;
     private float typingTime = 0.03f;
     public bool didDialogueStart;
     public int lineIndex;
@@ -25,6 +27,7 @@ public class ScriptDialogoDeMuerte : MonoBehaviour
         uiImage.sprite = portrait;
         didDialogueStart = true;
         dialoguePanel.SetActive(true);
+        uiSecondImageAnim.Play(animName);
         lineIndex = 0;
         StartCoroutine(ShowLine());
         playerMovement.moveSpeed = 0;
@@ -41,6 +44,7 @@ public class ScriptDialogoDeMuerte : MonoBehaviour
         else
         {           
             didDialogueStart = false;
+            uiSecondImageAnim.Play("Null");
             dialoguePanel.SetActive(false);
             lineIndex = 0;
             uiImage.sprite = null;

@@ -21,9 +21,9 @@ public class ScriptDialogo : MonoBehaviour
 
     public void StartDialogue()
     {
-        uiSecondImageAnim.Play(animName);
         didDialogueStart = true;
         dialoguePanel.SetActive(true);
+        uiSecondImageAnim.Play(animName);
         lineIndex = 0;
         StartCoroutine(ShowLine());
         playerMovement.moveSpeed = 0;
@@ -40,9 +40,9 @@ public class ScriptDialogo : MonoBehaviour
         else
         {           
             didDialogueStart = false;
+            uiSecondImageAnim.Play("Null");
             dialoguePanel.SetActive(false);
             lineIndex = 0;
-            uiSecondImageAnim.Play("Null");
             playerMovement.moveSpeed = 6f;
             StartCoroutine(DialogueCoolDown());
             if(obtenerPista.clueObtained == false)
