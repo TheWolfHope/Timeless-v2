@@ -14,7 +14,7 @@ public class GuardarDatosPistasYCargarlos : MonoBehaviour
 
     public bool win = false;
 
-    private void Start()
+    private void Awake()
     {
         hasClue1 = PlayerPrefs.GetInt("HasClue1", 0) == 1 ? true : false;
         hasClue2 = PlayerPrefs.GetInt("HasClue2", 0) == 1 ? true : false;

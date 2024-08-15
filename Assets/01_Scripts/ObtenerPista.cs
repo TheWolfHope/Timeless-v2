@@ -11,15 +11,12 @@ public class ObtenerPista : MonoBehaviour
     public GameObject paginablanca;
     void Awake()
     {
+        ActualizarUIConLaData();
         GameObject gameManager = GameObject.Find("GameManager");
         if(gameManager != null)
         {
             dataPistas = gameManager.GetComponent<GuardarDatosPistasYCargarlos>();
         }
-    }
-    void Start()
-    {
-        ActualizarUIConLaData();
     }
     public void GiveClue()
     {
