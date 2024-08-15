@@ -1,8 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using Microsoft.Unity.VisualStudio.Editor;
 
 public class ScriptDialogo : MonoBehaviour
 {
@@ -11,6 +9,8 @@ public class ScriptDialogo : MonoBehaviour
     public string[] dialogueLines;
     public Animator uiSecondImageAnim;
     public string animName;
+    public Sprite playerExpresiones;
+    public UnityEngine.UI.Image playerImage;
     private float typingTime = 0.03f;
     public bool didDialogueStart;
     public int lineIndex;

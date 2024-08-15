@@ -1,9 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using Microsoft.Unity.VisualStudio.Editor;
-
 public class ScriptDialogoDeMuerte : MonoBehaviour
 {
     [SerializeField] private GameObject dialoguePanel;

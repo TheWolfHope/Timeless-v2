@@ -12,7 +12,6 @@ public class CambiarCursor : MonoBehaviour
 
     void OnMouseOver()
     {
-        if(gameObject.tag == "Interactuable")
         {
             Cursor.SetCursor(questionCursor, Vector2.zero, cursorMode);
         }      

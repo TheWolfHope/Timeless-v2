@@ -1,8 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using Microsoft.Unity.VisualStudio.Editor;
 
 public class ScriptAyudante : MonoBehaviour
 {
@@ -10,6 +8,8 @@ public class ScriptAyudante : MonoBehaviour
     public TMP_Text dialogueText;
     public string[] dialogueLines;
     public Animator uiSecondImage;
+    public Sprite playerPortrait;
+    public UnityEngine.UI.Image playerImage;
     private float typingTime = 0.03f;
     public bool didDialogueStart;
     public int lineIndex;
