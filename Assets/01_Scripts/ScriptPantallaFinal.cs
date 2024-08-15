@@ -5,8 +5,7 @@ using UnityEngine;
 public class ScriptPantallaFinal : MonoBehaviour
 {
     public void Salir()
-    {
-
+    {        
         Application.Quit();
     }
 }
