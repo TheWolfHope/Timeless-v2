@@ -48,3 +48,9 @@ TagManager:
   - name: Player
     uniqueID: 564690985
     locked: 0
+  - name: FlashLight
+    uniqueID: 772808461
+    locked: 0
+  - name: UI
+    uniqueID: 578651721
+    locked: 0
