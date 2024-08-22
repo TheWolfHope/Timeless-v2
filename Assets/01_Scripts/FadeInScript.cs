@@ -23,12 +23,12 @@ public class FadeInScript : MonoBehaviour
 
     private void Update()
     {
-        if (guardardatosypitasycargalos.win)
+        if (guardardatosypitasycargalos.win == 1)
         {
             
             
                 paginablanca.SetActive(true);
-                guardardatosypitasycargalos.win = false;
+                guardardatosypitasycargalos.win = 0;
           
                 PlayerPrefs.SetInt("win", 0);
                 PlayerPrefs.Save();

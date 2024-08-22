@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Intensity: 0.2
   m_LightVolumeIntensity: 0.24
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000e770bcaa
+  m_ApplyToSortingLayers: 00000000e770bcaa0d1f102e
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -177,9 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179077db8c926894da08e9c698a2f70b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1267800786796880178}
   flashOn: 1
   flashlightOBJ: {fileID: 0}
+  cam: {fileID: 0}
 --- !u!1 &7099458078994871432
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,9 +337,11 @@ MonoBehaviour:
   - "Has estado tan cerca de la verdad, pero a\xFAn no la ves."
   - "Lo siento, pero estabas metiendo la nariz donde no deb\xEDas\u2026 y as\xED
     termina tu b\xFAsqueda."
-  portrait: {fileID: 21300000, guid: 55c8940a2b530d44c868489e30677dcc, type: 3}
+  portrait: {fileID: 21300000, guid: 061adf940985eba48b1370b1c93aea2b, type: 3}
   uiImage: {fileID: 0}
-  didDialogueStart: 0
+  uiSecondImageAnim: {fileID: 0}
+  animName: Shadow
+  didDialogueStart: 1
   lineIndex: 0
   playerMovement: {fileID: 3976304754724044669}
   seIniciaGamerOver: 0

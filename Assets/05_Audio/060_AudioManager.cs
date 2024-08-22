@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     private void Start()
-    {
+    {        
         LoadValues();
     }
 
@@ -76,18 +76,34 @@ public class AudioManager : MonoBehaviour
         LoadValues();
     }
     void LoadValues()
-    {
+    {        
         float GeneralValue = PlayerPrefs.GetFloat("GeneralValue");
         generalSlider.value = GeneralValue;
-        AudioListener.volume = GeneralValue;
-
+        AudioListener.volume = GeneralValue;     
+        if(!PlayerPrefs.HasKey("GeneralValue"))  
+        {
+            generalSlider.value = 1;
+            AudioListener.volume = 1f;
+        } 
+        
         float MusicValue = PlayerPrefs.GetFloat("MusicValue");
         musicVolumeSlider.value = MusicValue;
         AudioListener.volume = MusicValue;
-
+        if(!PlayerPrefs.HasKey("GeneralValue"))  
+        {
+            musicVolumeSlider.value = 1;
+            AudioListener.volume = 1f;
+        } 
+      
         float sfxValue = PlayerPrefs.GetFloat("SFXValue");
         sfxVolumeSlider.value = sfxValue;
         AudioListener.volume = sfxValue;
+        if(!PlayerPrefs.HasKey("GeneralValue"))  
+        {
+            sfxVolumeSlider.value = 1;
+            AudioListener.volume = 1f;
+        } 
+        PlayerPrefs.Save();
     }
     #endregion
 }

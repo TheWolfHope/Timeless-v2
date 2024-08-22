@@ -23,35 +23,31 @@ public class ObtenerPista : MonoBehaviour
         switch(clueNumber)
         {
             case 0: 
-                dataPistas.hasClue1 = true; 
+                dataPistas.hasClue1 = 1; 
                 PlayerPrefs.SetInt("HasClue1", 1);
                 PlayerPrefs.Save();               
                 clue1UI.SetActive(true);              
-                break;
-
-                
+                break;              
             case 1:
-                dataPistas.hasClue2 = true;
+                dataPistas.hasClue2 = 1;
                 PlayerPrefs.SetInt("HasClue2", 1);
                 PlayerPrefs.Save();
-                clue2UI.SetActive(true);
-       
+                clue2UI.SetActive(true);     
                 break;
             case 2:
-                dataPistas.hasClue3 = true;
+                dataPistas.hasClue3 = 1;
                 PlayerPrefs.SetInt("HasClue3", 1);
                 PlayerPrefs.Save();
-                clue3UI.SetActive(true);
-        
+                clue3UI.SetActive(true);       
                 break;
             case 3:
-                dataPistas.hasClue4 = true;
+                dataPistas.hasClue4 = 1;
                 PlayerPrefs.SetInt("HasClue4", 1);
                 PlayerPrefs.Save();
                 clue4UI.SetActive(true); 
                 break;
             case 4:
-                dataPistas.hasClue5 = true;
+                dataPistas.hasClue5 = 1;
                 PlayerPrefs.SetInt("HasClue5", 1);
                 PlayerPrefs.Save();
                 clue5UI.SetActive(true); 
@@ -67,7 +63,7 @@ public class ObtenerPista : MonoBehaviour
     }
     public void ActualizarUIConLaData()
     {
-        if(dataPistas.hasClue1 == true)
+        if(dataPistas.hasClue1 == 1)
         {
             clue1UI.SetActive(true); 
         }
@@ -75,7 +71,7 @@ public class ObtenerPista : MonoBehaviour
         {
             clue1UI.SetActive(false);
         }
-        if(dataPistas.hasClue2 == true)
+        if(dataPistas.hasClue2 == 1)
         {
             clue2UI.SetActive(true); 
         }
@@ -83,7 +79,7 @@ public class ObtenerPista : MonoBehaviour
         {
             clue2UI.SetActive(false);
         }
-        if(dataPistas.hasClue3 == true)
+        if(dataPistas.hasClue3 == 1)
         {
             clue3UI.SetActive(true); 
         }
@@ -91,7 +87,7 @@ public class ObtenerPista : MonoBehaviour
         {
             clue3UI.SetActive(false);
         }
-        if(dataPistas.hasClue4 == true)
+        if(dataPistas.hasClue4 == 1)
         {
             clue4UI.SetActive(true); 
         }
@@ -99,7 +95,7 @@ public class ObtenerPista : MonoBehaviour
         {
             clue4UI.SetActive(false);
         }
-        if(dataPistas.hasClue5 == true)
+        if(dataPistas.hasClue5 == 1)
         {
             clue5UI.SetActive(true); 
         }
