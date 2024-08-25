@@ -11,6 +11,7 @@ public class ObtenerPista : MonoBehaviour
     public GameObject paginablanca;
     void Awake()
     {
+        Debug.Log("Pista1:" + dataPistas.hasClue1);
         ActualizarUIConLaData();
         GameObject gameManager = GameObject.Find("GameManager");
         if(gameManager != null)
@@ -54,7 +55,6 @@ public class ObtenerPista : MonoBehaviour
                 break;
 
             case 5:
-                //Debug.Log("Llego a este punto");
                 dataPistas.ResetearVariables();
                 paginablanca.SetActive(true);
                 break;

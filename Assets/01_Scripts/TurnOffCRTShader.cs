@@ -3,37 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class TurnOffCRTShader : MonoBehaviour
 {
-    public int isShaderTurnOn = 1;
+    public bool isShaderToggleOn = true;
     public ScriptableRendererFeature crtShader;
     public Volume volume;
     public VolumeProfile noFilterProfile;
     public VolumeProfile filterProfile;
+    public Toggle crtToggle;
 
     void Awake()
     {
-        isShaderTurnOn = PlayerPrefs.GetInt("isShaderTurnOn", 1);        
+        isShaderToggleOn = PlayerPrefs.GetInt("isShaderToggleOn", 1) == 1;      
+        crtToggle.isOn = isShaderToggleOn;
+        ToggleShader(isShaderToggleOn);
+        crtToggle.onValueChanged.AddListener(OnToggleValueChanged);
     }
-    public void ToggleShader()
+    private void OnToggleValueChanged(bool isOn)
     {
-        if(isShaderTurnOn == 1)
+        PlayerPrefs.SetInt("isShaderToggleOn", isOn ? 1 : 0);
+        PlayerPrefs.Save();
+        ToggleShader(isOn);
+    }
+    
+    private void ToggleShader(bool isOn)
+    {
+        if(!isOn) 
         {
             crtShader.SetActive(false);
-            isShaderTurnOn = 0;
             volume.profile = noFilterProfile;
-            PlayerPrefs.SetInt("isShaderTurnOn", 0);
-            PlayerPrefs.Save();
         }
-        else if(isShaderTurnOn == 0)
+        else
         {
-            crtShader.SetActive(true);
-            isShaderTurnOn = 1;
+            crtShader.SetActive(true);           
             volume.profile = filterProfile;
-            PlayerPrefs.SetInt("isShaderTurnOn", 1);
-            PlayerPrefs.Save();
         }
     }
-
 }

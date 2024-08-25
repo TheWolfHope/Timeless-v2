@@ -4268,11 +4268,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ebf1fbbed050b45a30ecfc30645d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShaderTurnOn: 1
+  isShaderToggleOn: 1
   crtShader: {fileID: 2443815854152528012, guid: 424799608f7334c24bf367e4bbfa7f9a, type: 2}
   volume: {fileID: 0}
   noFilterProfile: {fileID: 11400000, guid: 7567d5f06ffac924d9bafdfe5944f8c9, type: 2}
   filterProfile: {fileID: 11400000, guid: 424b5eb00d817b94a866f28957f4034d, type: 2}
+  crtToggle: {fileID: 0}
 --- !u!1 &3596586768228513836
 GameObject:
   m_ObjectHideFlags: 0

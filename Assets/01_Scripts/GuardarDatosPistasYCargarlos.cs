@@ -26,9 +26,7 @@ public class GuardarDatosPistasYCargarlos : MonoBehaviour
     }
 
     private void Update()
-    {      
-      
-
+    {           
         if (hasClue1 == 1 && hasClue2 == 1 && hasClue3 == 1 && hasClue4 == 1 && hasClue5 == 1)
         {
             win = 1;
@@ -41,19 +39,19 @@ public class GuardarDatosPistasYCargarlos : MonoBehaviour
         {
         hasClue1 = 0; 
         PlayerPrefs.SetInt("HasClue1", 0);
-        PlayerPrefs.Save();
+
 
         hasClue2 = 0;
         PlayerPrefs.SetInt("HasClue2", 0);
-        PlayerPrefs.Save();
+
 
         hasClue3 = 0;
         PlayerPrefs.SetInt("HasClue3", 0);
-        PlayerPrefs.Save();
+
 
         hasClue4 = 0;
         PlayerPrefs.SetInt("HasClue4", 0);
-        PlayerPrefs.Save();
+
 
         hasClue5 = 0;
         PlayerPrefs.SetInt("HasClue5", 0);
