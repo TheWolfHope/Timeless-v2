@@ -64,46 +64,21 @@ public class AudioManager : MonoBehaviour
 
     public void SaveVolumeButton()
     {
-        float GeneralValue = generalSlider.value;
-        PlayerPrefs.SetFloat("GeneralValue", GeneralValue);
+        
+        PlayerPrefs.SetFloat("MasterValue", generalSlider.value);       
+        PlayerPrefs.SetFloat("MusicValue", musicVolumeSlider.value);
+        PlayerPrefs.SetFloat("SFXValue", sfxVolumeSlider.value);    
 
-        float MusicValue = musicVolumeSlider.value;
-        PlayerPrefs.SetFloat("MusicValue", MusicValue);
-
-        float sfxValue = sfxVolumeSlider.value;
-        PlayerPrefs.SetFloat("SFXValue", sfxValue);
-
-        LoadValues();
+        PlayerPrefs.Save(); 
     }
     void LoadValues()
-    {        
-        float GeneralValue = PlayerPrefs.GetFloat("GeneralValue");
-        generalSlider.value = GeneralValue;
-        AudioListener.volume = GeneralValue;     
-        if(!PlayerPrefs.HasKey("GeneralValue"))  
-        {
-            generalSlider.value = 1;
-            AudioListener.volume = 1f;
-        } 
-        
-        float MusicValue = PlayerPrefs.GetFloat("MusicValue");
-        musicVolumeSlider.value = MusicValue;
-        AudioListener.volume = MusicValue;
-        if(!PlayerPrefs.HasKey("GeneralValue"))  
-        {
-            musicVolumeSlider.value = 1;
-            AudioListener.volume = 1f;
-        } 
-      
-        float sfxValue = PlayerPrefs.GetFloat("SFXValue");
-        sfxVolumeSlider.value = sfxValue;
-        AudioListener.volume = sfxValue;
-        if(!PlayerPrefs.HasKey("GeneralValue"))  
-        {
-            sfxVolumeSlider.value = 1;
-            AudioListener.volume = 1f;
-        } 
-        PlayerPrefs.Save();
+    {         
+        mainMixer.SetFloat("MasterVolume", Mathf.Log10(PlayerPrefs.GetFloat("MasterValue", 1) * 20));             
+        mainMixer.SetFloat("MusicVolume", Mathf.Log10(PlayerPrefs.GetFloat("MusicValue", 1) * 20));      
+        mainMixer.SetFloat("SFXVolume", Mathf.Log10(PlayerPrefs.GetFloat("SFXValue", 1) * 20));  
+        generalSlider.value = PlayerPrefs.GetFloat("MasterValue", 1); 
+        musicVolumeSlider.value = PlayerPrefs.GetFloat("MusicValue", 1);    
+        sfxVolumeSlider.value = PlayerPrefs.GetFloat("SFXValue", 1);
     }
     #endregion
 }
